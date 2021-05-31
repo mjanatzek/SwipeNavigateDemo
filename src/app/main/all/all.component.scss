@@ -1,0 +1,21 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      height: 50vh;
+
+      .content {
+        transform-origin: top left;
+        transform: scale(.5, .5);
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ng-container *ngTemplateOutlet="singleTemplate; context: { posY: 'top', posX: 'left' }"></ng-container>
+    </div>
+    <div class="col">
+      <ng-container *ngTemplateOutlet="singleTemplate; context: { posY: 'top', posX: 'right' }"></ng-container>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <ng-container *ngTemplateOutlet="singleTemplate; context: { posY: 'bottom', posX: 'left' }"></ng-container>
+    </div>
+    <div class="col">
+      <ng-container *ngTemplateOutlet="singleTemplate; context: { posY: 'bottom', posX: 'right' }"></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #singleTemplate let-posY="posY" let-posX="posX">
+  <div class="content" [routerLink]="['..', 'single', posY, posX]" [style.transform]="transformCssProperty"
+       (pinchin)="navigateSingle(posY, posX)">
+    <app-single [posY]="posY" [posX]="posX"></app-single>
+  </div>
+</ng-template>

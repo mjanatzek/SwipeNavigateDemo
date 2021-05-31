@@ -1,0 +1,8 @@
+@import "../../../styles/variables";
+
+div {
+  width: calc(100vw - #{$buttonWidth});
+  height: calc(100vh - #{$buttonWidth});
+  border: 10px solid red;
+  box-sizing: border-box;
+}

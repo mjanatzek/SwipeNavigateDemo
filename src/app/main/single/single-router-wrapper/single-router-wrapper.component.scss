@@ -1,0 +1,52 @@
+@import "../../../../styles/variables";
+
+.general-button-container {
+  button {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.button-left {
+  @extend .general-button-container;
+
+  height: calc(100vh - #{$buttonWidth});
+  width: $buttonWidth;
+}
+
+.button-right {
+  @extend .general-button-container;
+
+  height: calc(100vh - #{$buttonWidth});
+  width: $buttonWidth;
+}
+
+.button-bottom {
+  @extend .general-button-container;
+
+  height: $buttonWidth;
+  width: 100vw;
+}
+
+.button-top {
+  @extend .general-button-container;
+
+  height: $buttonWidth;
+  width: 100vw;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    .content {
+      width: calc(100vw - #{$buttonWidth});
+      height: calc(100vh - #{$buttonWidth});
+    }
+  }
+}

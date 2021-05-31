@@ -1,0 +1,5 @@
+<div [@horizontalAnimation]="horizontalAnimationState$ | async"
+     [@verticalAnimation]="verticalAnimationState$ | async"
+     [@pageAnimation]="{ value: pageAnimationState$ | async, params: pageAnimationParams$ | async }">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>

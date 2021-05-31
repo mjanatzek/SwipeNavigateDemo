@@ -1,0 +1,31 @@
+<div class="container" (pinchout)="navigateAll()">
+  <div class="row">
+    <div class="button-top" *ngIf="(posY$ | async) === 'bottom'">
+      <button [routerLink]="['../..', 'top', posX$ | async]">Nach oben</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="button-left" *ngIf="(posX$ | async) === 'right'">
+      <button [routerLink]="['..', 'left']">Nach links</button>
+    </div>
+
+    <div class="content"
+         (swipeleft)="swipeEvent('left')"
+         (swiperight)="swipeEvent('right')"
+         (swipedown)="swipeEvent('down')"
+         (swipeup)="swipeEvent('up')">
+      <app-single [posX]="posX$ | async" [posY]="posY$ | async"></app-single>
+    </div>
+
+    <div class="button-right" *ngIf="(posX$ | async) === 'left'">
+      <button [routerLink]="['..', 'right']">Nach rechts</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="button-bottom" *ngIf="(posY$ | async) === 'top'">
+      <button [routerLink]="['../..', 'bottom', posX$ | async]">Nach unten</button>
+    </div>
+  </div>
+</div>
